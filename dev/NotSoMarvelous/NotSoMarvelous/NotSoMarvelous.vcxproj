@@ -139,12 +139,16 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Heroes.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="NotSoMarvelous.cpp" />
+    <ClCompile Include="Villians.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Helper.h" />
+    <ClInclude Include="Heroes.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="Villians.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
