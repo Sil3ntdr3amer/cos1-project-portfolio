@@ -1,12 +1,11 @@
 #pragma once
-class Weapons
+class Armour
 {
 
 
 
 
-
 private:
-	int addAttack;
+	int armour;
 };
 
