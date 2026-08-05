@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="NotSoMarvelous/NotSoMarvelous.vcxproj" Id="3b5140f1-1248-4bec-a059-761725e11b9b" />
+</Solution>
