@@ -30,9 +30,11 @@ int main()
 		{
 		case 1:
 			Characters::SelectHeroes(heroes);
+			helper::GetEnter();
 			break;
 		case 2:
 			Characters::SelectVillians(villians);
+			helper::GetEnter();
 			break;
 		case 3:
 

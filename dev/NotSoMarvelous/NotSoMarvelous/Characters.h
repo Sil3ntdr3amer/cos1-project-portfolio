@@ -18,8 +18,8 @@ public:
 
 
 	//show characters decleration
-	static void SelectHeroes(const std::vector<Characters>& heroes);
-	static void SelectVillians(const std::vector<Characters>& villians);
+	static Characters SelectHeroes(const std::vector<Characters>& heroes, const Characters& hero);
+	static Characters SelectVillians(const std::vector<Characters>& villians, const Characters& villian);
 
 private:
 	std::string name;
