@@ -27,7 +27,7 @@ I ended up changing some things around a little bit. I have decided to do a hero
 
 ### Week 2
 
-My next stand up will go here...
+Started off by creating my weapons and armor.
 
 ### Week 3
 
