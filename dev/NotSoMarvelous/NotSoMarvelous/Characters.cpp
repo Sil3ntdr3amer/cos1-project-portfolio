@@ -5,7 +5,7 @@
 
 
 //Shows the user all of the Heroes and has them select one
-Characters Characters::SelectHeroes(const std::vector<Characters>& heroes, const Characters& hero)
+Characters Characters::SelectHeroes(const std::vector<Characters>& heroes)
 {
 	std::cout << "\n\t\t+========+\n";
 	std::cout << "\t\t| Heroes |\n";
@@ -17,12 +17,12 @@ Characters Characters::SelectHeroes(const std::vector<Characters>& heroes, const
 	}
 	std::cout << "+------------------------------------------------+\n";
 	unsigned int usersHero = helper::GetMenuChoice("Which Hero would you like to use? ", 1, 5);
-	Characters hero = heroes[usersHero];
-	return hero;
+	Characters selectedHero = heroes[usersHero - 1];
+	return selectedHero;
 }
 
 //Shows the user all of the Villians and has them select one
-Characters Characters::SelectVillians(const std::vector<Characters>& villians, const Characters& villian)
+Characters Characters::SelectVillians(const std::vector<Characters>& villians)
 {
 	std::cout << "\n\t\t+==========+\n";
 	std::cout << "\t\t| Villians |\n";
@@ -34,6 +34,6 @@ Characters Characters::SelectVillians(const std::vector<Characters>& villians, c
 	}
 	std::cout << "+------------------------------------------------+\n";
 	unsigned int usersVillian = helper::GetMenuChoice("Which Villian would you like to go up against? ", 1, 5);
-	Characters villian = villians[usersVillian];
-	return villian;
+	Characters selectedVillian = villians[usersVillian - 1];
+	return selectedVillian;
 }

@@ -10,6 +10,7 @@ void Menu()
 	std::cout << "  1. Select Hero\n";
 	std::cout << "  2. Select Villian\n";
 	std::cout << "  3. Select Weapon\n";
-	std::cout << "  4. Fight\n";
-	std::cout << "  5. Exit\n\n";
+	std::cout << "  4. Select Armor\n";
+	std::cout << "  5. Fight\n";
+	std::cout << "  6. Exit\n\n";
 }
