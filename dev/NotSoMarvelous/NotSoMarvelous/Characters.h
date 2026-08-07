@@ -5,6 +5,14 @@
 class Characters
 {
 public:
+	//default ctor
+	Characters()
+	{
+		name = "";
+		health = 100;
+		attack = 10;
+	}
+
 	//ctor
 	Characters(const std::string& _name, int _health, int _attack)
 		: name(_name), health(_health), attack(_attack)
@@ -18,8 +26,8 @@ public:
 
 
 	//show characters decleration
-	static Characters SelectHeroes(const std::vector<Characters>& heroes, const Characters& hero);
-	static Characters SelectVillians(const std::vector<Characters>& villians, const Characters& villian);
+	static Characters SelectHeroes(const std::vector<Characters>& heroes);
+	static Characters SelectVillians(const std::vector<Characters>& villians);
 
 private:
 	std::string name;

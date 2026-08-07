@@ -19,30 +19,41 @@ int main()
 	std::vector<Characters> heroes = { spiderman, wolverine, hulk, captainAmerica, hawkeye };
 	std::vector<Characters> villians = { loki, venom, drDoom, magneto, greenGoblin };
 
+	//created variables to hold the users selection of Hero and Villian
+	Characters userHero;
+	Characters userVillian;
+
 	//menu loop 
 	bool check = true;
 	while (check)
 	{
 		Menu();//method to display the menu selections
 
-		unsigned int userMenu = helper::GetMenuChoice("Menu Option: ", 1, 5);
+		//stores the users selection in userMenu
+		unsigned int userMenu = helper::GetMenuChoice("Menu Option: ", 1, 6);
+
 		switch (userMenu)
 		{
 		case 1:
-			Characters::SelectHeroes(heroes);
+			userHero = Characters::SelectHeroes(heroes);
+			std::cout << "You have selected " << userHero.GetName() << " as your hero!";
 			helper::GetEnter();
 			break;
 		case 2:
-			Characters::SelectVillians(villians);
+			userVillian = Characters::SelectVillians(villians);
+			std::cout << "You have selected " << userVillian.GetName() << " as your villian!";
 			helper::GetEnter();
 			break;
 		case 3:
-
+			helper::GetEnter();
 			break;
 		case 4:
-
+			helper::GetEnter();
 			break;
 		case 5:
+			helper::GetEnter();
+			break;
+		case 6:
 			check = false;
 			break;
 		default:
