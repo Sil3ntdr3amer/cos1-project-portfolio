@@ -31,10 +31,10 @@ int main()
 	std::vector<Weapons> weapons = { hammer, sword, magic, staff, gun, noWeapon };
 
 	//created all of my armours
-	Armour greyShield(5, 1); // add 5 damage / add 1 defense
-	Armour blueShield(3, 3); // add 3 damage / add 3 defense
-	Armour purpleShield(1, 5); // add 1 damage / add 5 defense
-	Armour noShield(0, 0);
+	Armour greyShield("Grey Shield", 5, 1); // add 5 damage / add 1 defense
+	Armour blueShield("Blue Shield", 3, 3); // add 3 damage / add 3 defense
+	Armour purpleShield("Purple Shield", 1, 5); // add 1 damage / add 5 defense
+	Armour noShield("No Shield", 0, 0);
 	std::vector<Armour> armours = { greyShield, blueShield, purpleShield, noShield };
 
 	//created variables to hold the users selection of Hero, Villian, Armours, and Weapons
@@ -56,20 +56,22 @@ int main()
 		{
 		case 1://select hero
 			userHero = Characters::SelectHeroes(heroes);
-			std::cout << "Hero selected: " << userHero.GetCharacterName();
+			std::cout << "\nHero selected: [ " << userHero.GetCharacterName() << " ]";
 			helper::GetEnter();
 			break;
 		case 2://select villian
 			userVillian = Characters::SelectVillians(villians);
-			std::cout << "Villain selected: " << userVillian.GetCharacterName();
+			std::cout << "\nVillain selected: [ " << userVillian.GetCharacterName() << " ]";
 			helper::GetEnter();
 			break;
 		case 3://select weapon
 			userWeapon = Weapons::SelectWeapon(weapons);
-			std::cout << "Weapon selected: " << userWeapon.GetWeaponName();
+			std::cout << "\nWeapon selected: [ " << userWeapon.GetWeaponName() << " ]";
 			helper::GetEnter();
 			break;
 		case 4://select armor
+			userArmour = Armour::SelectArmour(armours);
+			std::cout << "\nArmor selected: [ " << userArmour.GetArmourName() << " ]";
 			helper::GetEnter();
 			break;
 		case 5://fight
