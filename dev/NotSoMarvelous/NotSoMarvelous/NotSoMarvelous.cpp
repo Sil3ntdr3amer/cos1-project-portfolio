@@ -22,12 +22,12 @@ int main()
 	std::vector<Characters> villians = { loki, venom, drDoom, magneto, greenGoblin };
 
 	//created all of my weapons
-	Weapons hammer(5, 5);// add 5 damage / -5 hp
-	Weapons sword(2, 2);// add 2 damage / -2 hp
-	Weapons magic(4, 4);// add 4 damage / -4 hp
-	Weapons staff(1, 1);// add 1 damage / -1 hp
-	Weapons gun(3, 3);// add 3 damage / -3 hp
-	Weapons noWeapon(0, 0);
+	Weapons hammer("Hammer", 5, 5);// add 5 damage / -5 hp
+	Weapons sword("Sword", 2, 2);// add 2 damage / -2 hp
+	Weapons magic("Magic", 4, 4);// add 4 damage / -4 hp
+	Weapons staff("Staff", 1, 1);// add 1 damage / -1 hp
+	Weapons gun("Gun", 3, 3);// add 3 damage / -3 hp
+	Weapons noWeapon("No Weapon", 0, 0);
 	std::vector<Weapons> weapons = { hammer, sword, magic, staff, gun, noWeapon };
 
 	//created all of my armours
@@ -54,26 +54,28 @@ int main()
 
 		switch (userMenu)
 		{
-		case 1:
+		case 1://select hero
 			userHero = Characters::SelectHeroes(heroes);
-			std::cout << "Hero selected: " << userHero.GetName() << " as your hero!";
+			std::cout << "Hero selected: " << userHero.GetCharacterName();
 			helper::GetEnter();
 			break;
-		case 2:
+		case 2://select villian
 			userVillian = Characters::SelectVillians(villians);
-			std::cout << "You have selected " << userVillian.GetName() << " as your villian!";
+			std::cout << "Villain selected: " << userVillian.GetCharacterName();
 			helper::GetEnter();
 			break;
-		case 3:
+		case 3://select weapon
+			userWeapon = Weapons::SelectWeapon(weapons);
+			std::cout << "Weapon selected: " << userWeapon.GetWeaponName();
 			helper::GetEnter();
 			break;
-		case 4:
+		case 4://select armor
 			helper::GetEnter();
 			break;
-		case 5:
+		case 5://fight
 			helper::GetEnter();
 			break;
-		case 6:
+		case 6://exit
 			check = false;
 			break;
 		default:
