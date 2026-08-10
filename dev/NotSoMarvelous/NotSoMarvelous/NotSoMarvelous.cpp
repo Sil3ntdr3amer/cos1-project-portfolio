@@ -1,9 +1,11 @@
 #include <iostream>
+#include <vector>
 #include "Menu.h"
 #include "Helper.h"
 #include "Characters.h"
 #include "Weapons.h"
 #include "Armour.h"
+#include <cstdlib>
 
 int main()
 {
@@ -47,35 +49,43 @@ int main()
 	bool check = true;
 	while (check)
 	{
+		system("cls");//clears the screen 
+
 		Menu();//method to display the menu selections
 
 		//stores the users selection in userMenu
 		unsigned int userMenu = helper::GetMenuChoice("Menu Option: ", 1, 6);
 
+		//menu loop
 		switch (userMenu)
 		{
 		case 1://select hero
+			system("cls");//clears the screen 
 			userHero = Characters::SelectHeroes(heroes);
 			std::cout << "\nHero selected: [ " << userHero.GetCharacterName() << " ]";
-			helper::GetEnter();
+			helper::GetEnter();//press enter to continue
 			break;
 		case 2://select villian
+			system("cls");//clears the screen 
 			userVillian = Characters::SelectVillians(villians);
 			std::cout << "\nVillain selected: [ " << userVillian.GetCharacterName() << " ]";
-			helper::GetEnter();
+			helper::GetEnter();//press enter to continue
 			break;
 		case 3://select weapon
+			system("cls");//clears the screen 
 			userWeapon = Weapons::SelectWeapon(weapons);
 			std::cout << "\nWeapon selected: [ " << userWeapon.GetWeaponName() << " ]";
-			helper::GetEnter();
+			helper::GetEnter();//press enter to continue
 			break;
 		case 4://select armor
+			system("cls");//clears the screen 
 			userArmour = Armour::SelectArmour(armours);
 			std::cout << "\nArmor selected: [ " << userArmour.GetArmourName() << " ]";
-			helper::GetEnter();
+			helper::GetEnter();//press enter to continue
 			break;
 		case 5://fight
-			helper::GetEnter();
+			system("cls");//clears the screen 
+			helper::GetEnter();//press enter to continue
 			break;
 		case 6://exit
 			check = false;
