@@ -8,32 +8,33 @@ public:
 	//default ctor
 	Characters()
 	{
-		name = "";
+		picture = "";
+		characterName = "";
 		health = 100;
 		attack = 10;
 	}
 
 	//ctor
-	Characters(const std::string& _name, int _health, int _attack)
-		: name(_name), health(_health), attack(_attack)
+	Characters(std::string _characterName, std::string _picture, int _health, int _attack)
+		: characterName(_characterName), picture(_picture), health(_health), attack(_attack)
 	{
 	}
 
 	//getters
-	const std::string GetName() const { return name; }
+	const std::string GetCharacterName() const { return characterName; }
+	const std::string GetPicture() const { return picture; }
 	const int GetHealth() const { return health; }
 	const int GetAttack() const { return attack; }
-
 
 	//show characters decleration
 	static Characters SelectHeroes(const std::vector<Characters>& heroes);
 	static Characters SelectVillians(const std::vector<Characters>& villians);
 
-private:
-	std::string name;
-	int health;
+    int health;
 	int attack;
 
-
+private:
+	std::string characterName;
+	std::string picture;
 };
 
