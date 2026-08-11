@@ -6,44 +6,20 @@
 #include "Weapons.h"
 #include "Armour.h"
 #include <cstdlib>
+#include "GameCharacters.h"
+#include <Windows.h>
 
 int main()
 {
-	//create all the heroes and villians
-	Characters spiderman("Spiderman", 100, 10); // hp: 100 / att : 10
-	Characters wolverine("Wolverine", 94, 13); // hp : 94 / att : 13
-	Characters hulk("Hulk", 90, 15); // hp : 90 / att : 15
-	Characters captainAmerica("Captain America", 96, 12); // hp : 96 / att : 12
-	Characters hawkeye("Hawkeye", 98, 11); // hp : 98 / att : 11
-	Characters loki("Loki", 100, 10); // hp : 100 / att : 10
-	Characters venom("Venom", 94, 13); // hp : 94 / att : 13
-	Characters drDoom("Dr. Doom", 90, 15); // hp : 90 / att : 15
-	Characters magneto("Magneto", 96, 12); // hp : 96 / att : 12
-	Characters greenGoblin("Green Goblin", 98, 11); // hp : 98 / att : 11
-	std::vector<Characters> heroes = { spiderman, wolverine, hulk, captainAmerica, hawkeye };
-	std::vector<Characters> villians = { loki, venom, drDoom, magneto, greenGoblin };
-
-	//created all of my weapons
-	Weapons hammer("Hammer", 5, 5);// add 5 damage / -5 hp
-	Weapons sword("Sword", 2, 2);// add 2 damage / -2 hp
-	Weapons magic("Magic", 4, 4);// add 4 damage / -4 hp
-	Weapons staff("Staff", 1, 1);// add 1 damage / -1 hp
-	Weapons gun("Gun", 3, 3);// add 3 damage / -3 hp
-	Weapons noWeapon("No Weapon", 0, 0);
-	std::vector<Weapons> weapons = { hammer, sword, magic, staff, gun, noWeapon };
-
-	//created all of my armours
-	Armour greyShield("Grey Shield", 5, 1); // add 5 damage / add 1 defense
-	Armour blueShield("Blue Shield", 3, 3); // add 3 damage / add 3 defense
-	Armour purpleShield("Purple Shield", 1, 5); // add 1 damage / add 5 defense
-	Armour noShield("No Shield", 0, 0);
-	std::vector<Armour> armours = { greyShield, blueShield, purpleShield, noShield };
+	SetConsoleOutputCP(CP_UTF8);
+	SetConsoleCP(CP_UTF8);
 
 	//created variables to hold the users selection of Hero, Villian, Armours, and Weapons
 	Characters userHero;
 	Characters userVillian;
 	Armour userArmour;
 	Weapons userWeapon;
+	GameCharacters data;
 
 	//menu loop 
 	bool check = true;
@@ -61,25 +37,29 @@ int main()
 		{
 		case 1://select hero
 			system("cls");//clears the screen 
-			userHero = Characters::SelectHeroes(heroes);
-			std::cout << "\nHero selected: [ " << userHero.GetCharacterName() << " ]";
+			userHero = Characters::SelectHeroes(data.heroes);
+			system("cls");//clears the screen 
+			std::cout << "\nHero selected: [ " << userHero.GetCharacterName() << " ]\n\t" << userHero.GetPicture() << "\n";
 			helper::GetEnter();//press enter to continue
 			break;
 		case 2://select villian
 			system("cls");//clears the screen 
-			userVillian = Characters::SelectVillians(villians);
-			std::cout << "\nVillain selected: [ " << userVillian.GetCharacterName() << " ]";
+			userVillian = Characters::SelectVillians(data.villians);
+			system("cls");//clears the screen 
+			std::cout << "\nVillain selected: [ " << userVillian.GetCharacterName() << " ]\n\t" << userVillian.GetPicture() << "\n";
 			helper::GetEnter();//press enter to continue
 			break;
 		case 3://select weapon
 			system("cls");//clears the screen 
-			userWeapon = Weapons::SelectWeapon(weapons);
+			userWeapon = Weapons::SelectWeapon(data.weapons);
+			system("cls");//clears the screen 
 			std::cout << "\nWeapon selected: [ " << userWeapon.GetWeaponName() << " ]";
 			helper::GetEnter();//press enter to continue
 			break;
 		case 4://select armor
 			system("cls");//clears the screen 
-			userArmour = Armour::SelectArmour(armours);
+			userArmour = Armour::SelectArmour(data.armours);
+			system("cls");//clears the screen 
 			std::cout << "\nArmor selected: [ " << userArmour.GetArmourName() << " ]";
 			helper::GetEnter();//press enter to continue
 			break;

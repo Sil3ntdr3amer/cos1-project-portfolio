@@ -30,6 +30,9 @@
     <ClCompile Include="Armour.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Fight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Helper.h">
@@ -45,6 +48,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Armour.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Fight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameCharacters.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -37,3 +37,4 @@ Characters Characters::SelectVillians(const std::vector<Characters>& villians)
 	Characters selectedVillian = villians[usersVillian - 1];
 	return selectedVillian;
 }
+
