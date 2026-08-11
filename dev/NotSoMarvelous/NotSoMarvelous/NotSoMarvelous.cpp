@@ -39,28 +39,28 @@ int main()
 			system("cls");//clears the screen 
 			userHero = Characters::SelectHeroes(data.heroes);
 			system("cls");//clears the screen 
-			std::cout << "\nHero selected: [ " << userHero.GetCharacterName() << " ]\n\t" << userHero.GetPicture() << "\n";
+			std::cout << "\n\nHero selected: [ " << userHero.GetCharacterName() << " ]\n\t" << userHero.GetPicture() << "\n";
 			helper::GetEnter();//press enter to continue
 			break;
 		case 2://select villian
 			system("cls");//clears the screen 
 			userVillian = Characters::SelectVillians(data.villians);
 			system("cls");//clears the screen 
-			std::cout << "\nVillain selected: [ " << userVillian.GetCharacterName() << " ]\n\t" << userVillian.GetPicture() << "\n";
+			std::cout << "\n\nVillain selected: [ " << userVillian.GetCharacterName() << " ]\n\t" << userVillian.GetPicture() << "\n";
 			helper::GetEnter();//press enter to continue
 			break;
 		case 3://select weapon
 			system("cls");//clears the screen 
 			userWeapon = Weapons::SelectWeapon(data.weapons);
 			system("cls");//clears the screen 
-			std::cout << "\nWeapon selected: [ " << userWeapon.GetWeaponName() << " ]";
+			std::cout << "\n\nWeapon selected: [ " << userWeapon.GetWeaponName() << " ]";
 			helper::GetEnter();//press enter to continue
 			break;
 		case 4://select armor
 			system("cls");//clears the screen 
 			userArmour = Armour::SelectArmour(data.armours);
 			system("cls");//clears the screen 
-			std::cout << "\nArmor selected: [ " << userArmour.GetArmourName() << " ]";
+			std::cout << "\n\nArmor selected: [ " << userArmour.GetArmourName() << " ]";
 			helper::GetEnter();//press enter to continue
 			break;
 		case 5://fight
