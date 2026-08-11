@@ -27,7 +27,7 @@ I ended up changing some things around a little bit. I have decided to do a hero
 
 ### Week 2
 
-Started off by creating my weapons and armor.
+Started off by creating my weapons and armor. I ended up changing the location of all of my character, weapons, and armor. I decided to make a struct called GameCharacters and stuck all of them in there. I then created all of the pictures for every character. I stored them into a string and added them to each character. I also added some clear screen things in there that way the program would look cleaner and be more user friendly. I noticed that my menu options were kind of annoying because they all popped up underneath one another. So i decided to clear the screen after every option the user selects. Just to make everything a lot cleaner. I learned how to implement a clear screen on the console. I plan to prioritize my attack and defend methods. These are going to be the base logic of the fight scenes.
 
 ### Week 3
 

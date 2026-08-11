@@ -1,5 +1,7 @@
 #pragma once
 #include "Characters.h"
+#include "Armour.h"
+#include "Weapons.h"
 
 void Fight();
 
