@@ -4,4 +4,4 @@
 //this will just display the menu options
 void Menu();
 
-void FightMenu(const GameCharacters& data);
+void FightMenu(GameCharacters& data);

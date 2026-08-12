@@ -8,6 +8,7 @@
 #include <cstdlib>
 #include "GameCharacters.h"
 #include <Windows.h>
+#include "Fight.h"
 
 
 int main()
@@ -66,7 +67,7 @@ int main()
 			break;
 		case 5://fight
 			system("cls");//clears the screen 
-			FightMenu(data);
+			Fight(data);
 			helper::GetEnter();//press enter to continue
 			break;
 		case 6://exit
