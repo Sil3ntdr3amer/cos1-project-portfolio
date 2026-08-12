@@ -21,7 +21,7 @@ public:
 
 	//getter
 	const std::string GetArmourName() const { return armourName; }
-	const int GetArmour() const { return minusDamage; }
+	const int GetMinusDamage() const { return minusDamage; }
 	const int GetDefense() const { return defense; }
 
 	//Select armour method
