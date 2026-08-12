@@ -1,5 +1,10 @@
 #include "Menu.h"
+#include "GameCharacters.h"
 #include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <algorithm>
 
 //this will display the menu options
 void Menu()
@@ -13,4 +18,24 @@ void Menu()
 	std::cout << "  4. Select Armor\n";
 	std::cout << "  5. Fight\n";
 	std::cout << "  6. Exit\n\n";
+}
+
+//This will be the menu for the fight scene
+void FightMenu(const GameCharacters& data)
+{
+	std::cout << R"ART(
+	   +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	   |                 ______ _____ _____ _    _ _______ _                 |
+	   |                |  ____|_   _/ ____| |  | |__   __| |                |
+	   |                | |__    | || |  __| |__| |  | |  | |                |
+	   |                |  __|   | || | |_ |  __  |  | |  | |                |
+	   |                | |     _| || |__| | |  | |  | |  |_|                |
+	   |                |_|    |_____\_____|_|  |_|  |_|  (_)                |
+	   |                                                                     |
+	   +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+)ART";
+	
+	std::cout << "\n\n\t\t  [ " << data.userHero.GetCharacterName() << " ]\t\t\t\t\t\t" << "  [ " << data.userVillian.GetCharacterName() << " ]\n\n";
+	data.PrintFightPicture(data.userHero.GetPicture(), data.userVillian.GetPicture());
+	
 }

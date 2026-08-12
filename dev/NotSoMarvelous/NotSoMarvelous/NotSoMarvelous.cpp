@@ -9,16 +9,13 @@
 #include "GameCharacters.h"
 #include <Windows.h>
 
+
 int main()
 {
 	SetConsoleOutputCP(CP_UTF8);
 	SetConsoleCP(CP_UTF8);
 
-	//created variables to hold the users selection of Hero, Villian, Armours, and Weapons
-	Characters userHero;
-	Characters userVillian;
-	Armour userArmour;
-	Weapons userWeapon;
+	//created variable to hold the users selection of Hero, Villian, Armours, and Weapons
 	GameCharacters data;
 
 	//menu loop 
@@ -37,34 +34,39 @@ int main()
 		{
 		case 1://select hero
 			system("cls");//clears the screen 
-			userHero = Characters::SelectHeroes(data.heroes);
+			data.userHero = Characters::SelectHeroes(data.heroes);
 			system("cls");//clears the screen 
-			std::cout << "\n\nHero selected: [ " << userHero.GetCharacterName() << " ]\n\t" << userHero.GetPicture() << "\n";
+			std::cout << "\n\nHero selected: [ " << data.userHero.GetCharacterName() << " ]\n";
+			data.PrintPicture(data.userHero.GetPicture());
+			std::cout << "\n";
 			helper::GetEnter();//press enter to continue
 			break;
 		case 2://select villian
 			system("cls");//clears the screen 
-			userVillian = Characters::SelectVillians(data.villians);
+			data.userVillian = Characters::SelectVillians(data.villians);
 			system("cls");//clears the screen 
-			std::cout << "\n\nVillain selected: [ " << userVillian.GetCharacterName() << " ]\n\t" << userVillian.GetPicture() << "\n";
+			std::cout << "\n\nVillain selected: [ " << data.userVillian.GetCharacterName() << " ]\n";
+			data.PrintPicture(data.userVillian.GetPicture());
+			std::cout << "\n";
 			helper::GetEnter();//press enter to continue
 			break;
 		case 3://select weapon
 			system("cls");//clears the screen 
-			userWeapon = Weapons::SelectWeapon(data.weapons);
+			data.userWeapon = Weapons::SelectWeapon(data.weapons);
 			system("cls");//clears the screen 
-			std::cout << "\n\nWeapon selected: [ " << userWeapon.GetWeaponName() << " ]";
+			std::cout << "\n\nWeapon selected: [ " << data.userWeapon.GetWeaponName() << " ]";
 			helper::GetEnter();//press enter to continue
 			break;
 		case 4://select armor
 			system("cls");//clears the screen 
-			userArmour = Armour::SelectArmour(data.armours);
+			data.userArmour = Armour::SelectArmour(data.armours);
 			system("cls");//clears the screen 
-			std::cout << "\n\nArmor selected: [ " << userArmour.GetArmourName() << " ]";
+			std::cout << "\n\nArmor selected: [ " << data.userArmour.GetArmourName() << " ]";
 			helper::GetEnter();//press enter to continue
 			break;
 		case 5://fight
 			system("cls");//clears the screen 
+			FightMenu(data);
 			helper::GetEnter();//press enter to continue
 			break;
 		case 6://exit

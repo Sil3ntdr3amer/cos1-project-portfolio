@@ -1,11 +1,9 @@
 #pragma once
-#include "Characters.h"
-#include "Armour.h"
-#include "Weapons.h"
+#include "GameCharacters.h"
 
-void Fight();
 
-void HeroAttack(Characters& hero, Characters& villain, const Weapons& weapon, const Armour& armour);
-void HeroDefend(Characters& hero, Characters& villain, const Weapons& weapon, const Armour& armour);
-void VillainAttack(Characters& hero, Characters& villain, const Weapons& weapon, const Armour& armour);
-void VillainDefend(Characters& hero, Characters& villain, const Weapons& weapon, const Armour& armour);
+void HeroAttack(GameCharacters& data);
+void HeroDefend(GameCharacters& data);
+void VillainAttack(GameCharacters& data);
+void VillainDefend(GameCharacters& data);
+void Fight(GameCharacters& data);
