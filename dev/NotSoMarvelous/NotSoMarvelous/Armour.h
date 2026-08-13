@@ -9,19 +9,19 @@ public:
 	Armour()
 	{
 		armourName = "No armor";
-		armour = 0;
+		minusDamage = 0;
 		defense = 0;
 	}
 
 	//ctor
-	Armour(std::string _armourName, int _armour, int _defense)
-		:armourName(_armourName), armour(_armour), defense(_defense)
+	Armour(std::string _armourName, int _minusDamage, int _defense)
+		:armourName(_armourName), minusDamage(_minusDamage), defense(_defense)
 	{
 	}
 
 	//getter
 	const std::string GetArmourName() const { return armourName; }
-	const int GetArmour() const { return armour; }
+	const int GetMinusDamage() const { return minusDamage; }
 	const int GetDefense() const { return defense; }
 
 	//Select armour method
@@ -30,7 +30,7 @@ public:
 
 private:
 	std::string armourName;
-	int armour;
+	int minusDamage;
 	int defense;
 
 };
