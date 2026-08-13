@@ -68,8 +68,8 @@ int main()
 		case 5://fight
 			system("cls");//clears the screen 
 			Fight(data);
+			system("cls");//clears the screen 
 			check = PlayAgain();
-			helper::GetEnter();//press enter to continue
 			break;
 		case 6://exit
 			check = false;

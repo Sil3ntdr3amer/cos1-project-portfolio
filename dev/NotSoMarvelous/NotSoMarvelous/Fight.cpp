@@ -64,28 +64,29 @@ bool Winner(GameCharacters& player)
 {
 	if (player.userVillian.health <= 0)
 	{
-		std::cout << "\n\nWinner is " << player.userHero.GetCharacterName();
-		return true;
+		std::cout << "\n\nWinner is " << player.userHero.GetCharacterName() << "\n";
+		return false;
 	}
 	if (player.userHero.health <= 0)
 	{
-		std::cout << "\n\nWinner is " << player.userVillian.GetCharacterName();
-		return true;
+		std::cout << "\n\nWinner is " << player.userVillian.GetCharacterName() << "\n";
+		return false;
 	}
 }
 
 //method to ask the user if they want to play again
 bool PlayAgain()
 {
-	unsigned int playAgain = helper::GetMenuChoice("Would you like to play again? ", 1, 2);
-	std::cout << "1. Yes\n2. No";
+	std::cout << "Play Again?\n";
+	std::cout << "-----------\n";
+	unsigned int playAgain = helper::GetMenuChoice(" 1. Yes\n 2. No\n\nPlease Select an option: ", 1, 2);
 	switch (playAgain)
 	{
 	case 1:
 		return true;
 		break;
 	case 2:
-		std::cout << "Okay. Later Loser!!!";
+		std::cout << "\nOkay. Later Loser!!!\n";
 		return false;
 		break;
 	}
@@ -123,15 +124,29 @@ void Fight(GameCharacters& data)
 		case 1:
 			HeroAttack(player);
 			RandomAttDef(villainDefense, player);
-			std::cout << "[ " << player.userHero.GetCharacterName() << " has " << player.userHero.GetHealth() << " HP ]\n";
-			std::cout << "[ " << player.userVillian.GetCharacterName() << " has " << player.userVillian.GetHealth() << " HP ]\n";
+			if(player.userHero.GetHealth() > 0 && player.userVillian.GetHealth() > 0)
+			{
+				std::cout << "[ " << player.userHero.GetCharacterName() << " has " << player.userHero.GetHealth() << " HP ]\n";
+				std::cout << "[ " << player.userVillian.GetCharacterName() << " has " << player.userVillian.GetHealth() << " HP ]\n";
+			}
+			else
+			{
+				check = Winner(player);
+			}
 			helper::GetEnter();
 			break;
 		case 2:
 			HeroDefend(player);
 			RandomAttDef(villainDefense, player);
-			std::cout << "[ " << player.userHero.GetCharacterName() << " has " << player.userHero.GetHealth() << " HP ]\n";
-			std::cout << "[ " << player.userVillian.GetCharacterName() << " has " << player.userVillian.GetHealth() << " HP ]\n";
+			if (player.userVillian.GetHealth() > 0 && player.userHero.GetHealth() > 0)
+			{
+				std::cout << "[ " << player.userHero.GetCharacterName() << " has " << player.userHero.GetHealth() << " HP ]\n";
+				std::cout << "[ " << player.userVillian.GetCharacterName() << " has " << player.userVillian.GetHealth() << " HP ]\n";
+			}
+			else 
+			{
+				check = Winner(player);
+			}
 			helper::GetEnter();
 			break;
 		case 3:
