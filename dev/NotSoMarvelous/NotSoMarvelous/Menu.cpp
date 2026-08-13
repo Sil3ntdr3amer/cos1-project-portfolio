@@ -41,17 +41,5 @@ void FightMenu(GameCharacters& data)
 	data.PrintFightPicture(data.userHero.GetPicture(), data.userVillian.GetPicture());
 	std::cout << "\n\n[ So begins the greatest fight in our universe! ]   { " << data.userHero.GetCharacterName() << "  VS  " << data.userVillian.GetCharacterName() << " }\n\t";
 	helper::GetEnter();
-	system("cls");//clears the screen 
-
-	//print to the screen the characters
-	std::cout << "\n\n\t\t  [ " << data.userHero.GetCharacterName() << " ]\t\t\t\t\t\t" << "  [ " << data.userVillian.GetCharacterName() << " ]\n\n";
-	data.PrintFightPicture(data.userHero.GetPicture(), data.userVillian.GetPicture());
-	std::cout << "\n\n";
-
-	std::cout << "++++++++++++++\n";
-	std::cout << "  1. Attack   \n";
-	std::cout << "  2. Defend   \n";
-	std::cout << "  3. Forfeit   \n";
-	std::cout << "++++++++++++++\n";
-
+	system("cls");//clears the screen
 }

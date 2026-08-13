@@ -21,7 +21,7 @@ int main()
 
 	//menu loop 
 	bool check = true;
-	while (check)
+	do
 	{
 		system("cls");//clears the screen 
 
@@ -68,6 +68,7 @@ int main()
 		case 5://fight
 			system("cls");//clears the screen 
 			Fight(data);
+			check = PlayAgain();
 			helper::GetEnter();//press enter to continue
 			break;
 		case 6://exit
@@ -76,5 +77,5 @@ int main()
 		default:
 			break;
 		}
-	}
+	} while (check);
 }
