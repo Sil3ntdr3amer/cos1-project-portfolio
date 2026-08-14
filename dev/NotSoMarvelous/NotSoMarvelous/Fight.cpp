@@ -46,7 +46,7 @@ void RandomAttDef(const int& defense, GameCharacters& player)
 }
 
 //This method will do the calculations for the data the user has entered
-GameCharacters Calculate(GameCharacters& data)
+GameCharacters Calculate(GameCharacters data)
 {
 	data.userHero.health -= data.userWeapon.GetMinusHealth();//subtract health from weapon
 	data.userHero.attack += data.userWeapon.GetAddAttack();//adds damage from weapon
@@ -59,37 +59,48 @@ GameCharacters Calculate(GameCharacters& data)
 	return data;
 }
 
-//prints to the screen that the hero won
+//prints to the screen who won
 bool Winner(GameCharacters& player)
 {
-	if (player.userVillian.health <= 0)
+	bool villainDown = player.userVillian.GetHealth() <= 0;
+	bool heroDown = player.userHero.GetHealth() <= 0;
+
+	if (villainDown && heroDown)
+	{
+		std::cout << "\n\nIt's a draw! Both fighters have fallen!\n";
+		return false;
+	}
+	if (villainDown)
 	{
 		std::cout << "\n\nWinner is " << player.userHero.GetCharacterName() << "\n";
 		return false;
 	}
-	if (player.userHero.health <= 0)
+	if (heroDown)
 	{
 		std::cout << "\n\nWinner is " << player.userVillian.GetCharacterName() << "\n";
 		return false;
 	}
+	return true;
 }
 
 //method to ask the user if they want to play again
 bool PlayAgain()
 {
+	bool check = true;
 	std::cout << "Play Again?\n";
 	std::cout << "-----------\n";
 	unsigned int playAgain = helper::GetMenuChoice(" 1. Yes\n 2. No\n\nPlease Select an option: ", 1, 2);
 	switch (playAgain)
 	{
 	case 1:
-		return true;
+		check =  true;
 		break;
 	case 2:
 		std::cout << "\nOkay. Later Loser!!!\n";
-		return false;
+		check = false;
 		break;
 	}
+	return check;
 }
 
 //this will be the fight scene
@@ -101,7 +112,7 @@ void Fight(GameCharacters& data)
 	system("cls");//clears the screen
 	FightMenu(data);
 	player = Calculate(data);
-	int villainDefense = helper::RandomNumberGenerator(0, 5);
+	int villainDefense = helper::RandomNumberGenerator(0, 10);
 
 	do
 	{
@@ -114,7 +125,7 @@ void Fight(GameCharacters& data)
 		std::cout << "++++++++++++++\n";
 		std::cout << "  1. Attack   \n";
 		std::cout << "  2. Defend   \n";
-		std::cout << "  3. Forfeit   \n";
+		std::cout << "  3. Forfeit  \n";
 		std::cout << "++++++++++++++\n";
 
 		unsigned int userFight = helper::GetMenuChoice("What would you like to do? ", 1, 3);
@@ -123,29 +134,45 @@ void Fight(GameCharacters& data)
 		{
 		case 1:
 			HeroAttack(player);
-			RandomAttDef(villainDefense, player);
-			if(player.userHero.GetHealth() > 0 && player.userVillian.GetHealth() > 0)
+			// check for a kill BEFORE letting the villain act
+			if (player.userVillian.GetHealth() <= 0)
 			{
-				std::cout << "[ " << player.userHero.GetCharacterName() << " has " << player.userHero.GetHealth() << " HP ]\n";
-				std::cout << "[ " << player.userVillian.GetCharacterName() << " has " << player.userVillian.GetHealth() << " HP ]\n";
+				check = Winner(player);
+				helper::GetEnter();
+				break;
+			}
+
+			RandomAttDef(villainDefense, player);
+			if (player.userHero.GetHealth() <= 0)
+			{
+				check = Winner(player);
 			}
 			else
 			{
-				check = Winner(player);
+				std::cout << "[ " << player.userHero.GetCharacterName() << " has " << player.userHero.GetHealth() << " HP ]\n";
+				std::cout << "[ " << player.userVillian.GetCharacterName() << " has " << player.userVillian.GetHealth() << " HP ]\n";
 			}
 			helper::GetEnter();
 			break;
 		case 2:
 			HeroDefend(player);
+			// defending doesn't kill the villain, but check anyway for consistency
+			if (player.userVillian.GetHealth() <= 0)
+			{
+				check = Winner(player);
+				helper::GetEnter();
+				break;
+			}
+
 			RandomAttDef(villainDefense, player);
-			if (player.userVillian.GetHealth() > 0 && player.userHero.GetHealth() > 0)
+			if (player.userHero.GetHealth() <= 0)
+			{
+				check = Winner(player);
+			}
+			else
 			{
 				std::cout << "[ " << player.userHero.GetCharacterName() << " has " << player.userHero.GetHealth() << " HP ]\n";
 				std::cout << "[ " << player.userVillian.GetCharacterName() << " has " << player.userVillian.GetHealth() << " HP ]\n";
-			}
-			else 
-			{
-				check = Winner(player);
 			}
 			helper::GetEnter();
 			break;
@@ -154,6 +181,6 @@ void Fight(GameCharacters& data)
 			break;
 		}
 	} while (check);
-
 }
+
 

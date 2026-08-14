@@ -228,9 +228,9 @@ struct GameCharacters
 	std::vector<Weapons> weapons = { hammer, sword, magic, staff, gun, noWeapon };
 
 	//created all of my armours
-	Armour greyShield{ "Grey Shield", 1, 1 }; // minus 1 damage / add 1 defense
-	Armour blueShield{ "Blue Shield", 3, 3 }; // minus 3 damage / add 3 defense
-	Armour purpleShield{ "Purple Shield", 5, 5 }; // minus 5 damage / add 5 defense
+	Armour greyShield{ "Grey Shield", 1, 5 }; // minus 1 damage / add 5 defense
+	Armour blueShield{ "Blue Shield", 3, 7 }; // minus 3 damage / add 7 defense
+	Armour purpleShield{ "Purple Shield", 5, 10 }; // minus 5 damage / add 10 defense
 	Armour noShield{ "No Shield", 0, 0 };
 	std::vector<Armour> armours = { greyShield, blueShield, purpleShield, noShield };
 
