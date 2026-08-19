@@ -4,7 +4,7 @@
 #include "Weapons.h"
 #include "Armour.h"
 #include <vector>
-
+#include <string>
 
 
 struct GameCharacters
@@ -219,18 +219,18 @@ struct GameCharacters
 	std::vector<Characters> villians = { loki, venom, drDoom, magneto, greenGoblin };
 
 	//created all of my weapons
-	Weapons hammer{ "Hammer", 5, 5 };// add 5 damage / -5 hp
-	Weapons sword{ "Sword", 2, 2 };// add 2 damage / -2 hp
-	Weapons magic{ "Magic", 4, 4 };// add 4 damage / -4 hp
-	Weapons staff{ "Staff", 1, 1 };// add 1 damage / -1 hp
-	Weapons gun{ "Gun", 3, 3 };// add 3 damage / -3 hp
+	Weapons hammer{ "Hammer", 10, 10 };// add 10 damage / -10 hp
+	Weapons sword{ "Sword", 4, 4 };// add 4 damage / -4 hp
+	Weapons magic{ "Magic", 7, 7 };// add 7 damage / -7 hp
+	Weapons staff{ "Staff", 3, 3 };// add 3 damage / -3 hp
+	Weapons gun{ "Gun", 5, 5 };// add 5 damage / -5 hp
 	Weapons noWeapon{ "No Weapon", 0, 0 };
 	std::vector<Weapons> weapons = { hammer, sword, magic, staff, gun, noWeapon };
 
 	//created all of my armours
-	Armour greyShield{ "Grey Shield", 1, 1 }; // minus 1 damage / add 1 defense
-	Armour blueShield{ "Blue Shield", 3, 3 }; // minus 3 damage / add 3 defense
-	Armour purpleShield{ "Purple Shield", 5, 5 }; // minus 5 damage / add 5 defense
+	Armour greyShield{ "Grey Shield", 1, 6 }; // minus 1 damage / add 6 defense
+	Armour blueShield{ "Blue Shield", 3, 8 }; // minus 3 damage / add 8 defense
+	Armour purpleShield{ "Purple Shield", 5, 10 }; // minus 5 damage / add 10 defense
 	Armour noShield{ "No Shield", 0, 0 };
 	std::vector<Armour> armours = { greyShield, blueShield, purpleShield, noShield };
 
@@ -251,7 +251,9 @@ struct GameCharacters
 	//method to print out the picture of both selected characters
 	void PrintFightPicture(const std::vector<std::string>& heroPic, const std::vector<std::string>& villainPic) const
 	{
-		int sizeTracker = 0;
+		constexpr size_t kPicWidth = 35; // every picture array is 35 columns wide
+
+		size_t sizeTracker = 0;
 		if (heroPic.size() > villainPic.size())
 		{
 			sizeTracker = heroPic.size();
@@ -270,16 +272,18 @@ struct GameCharacters
 			{
 				if (i >= heroPic.size())
 				{
-					std::cout << "\t";
-					size_t size = heroPic[1].size() / 3;
-					for (size_t j = 0; j < size; ++j)
-					{
-						std::cout << " ";
-					}
+					std::cout << "\t" << std::string(kPicWidth, ' ');
 				}
 				std::cout << "\t\t\t" << villainPic[i];
 			}
 			std::cout << "\n";
 		}
+	}
+
+	//method to show all stats
+	void ShowStats(const GameCharacters& data)
+	{
+		std::cout << "\n\t[ " << data.userHero.GetCharacterName() << ": " << data.userHero.GetHealth() << " HP, " << data.userHero.GetAttack() << " Damage ]\t\t\t\t";
+		std::cout << "   [ " << data.userVillian.GetCharacterName() << ": " << data.userVillian.GetHealth() << " HP, " << data.userVillian.GetAttack() << " Damage ]\n\n";
 	}
 };

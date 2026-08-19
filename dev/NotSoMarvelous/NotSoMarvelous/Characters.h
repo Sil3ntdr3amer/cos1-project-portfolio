@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 
+
 class Characters
 {
 public:
@@ -28,7 +29,10 @@ public:
 
 	//show characters decleration
 	static Characters SelectHeroes(const std::vector<Characters>& heroes);
-	static Characters SelectVillians(const std::vector<Characters>& villians);
+	static Characters RandomVillian(const std::vector<Characters>& villians);
+	static Characters RandomHero(const std::vector<Characters>& heroes);
+	static Characters RandomWeapon(const std::vector<Characters>& weapons);
+	static Characters RandomArmor(const std::vector<Characters>& armors);
 
     int health;
 	int attack;

@@ -9,6 +9,7 @@
 #include "GameCharacters.h"
 #include <Windows.h>
 #include "Fight.h"
+#include "Selections.h"
 
 
 int main()
@@ -28,50 +29,30 @@ int main()
 		Menu();//method to display the menu selections
 
 		//stores the users selection in userMenu
-		unsigned int userMenu = helper::GetMenuChoice("Menu Option: ", 1, 6);
+		unsigned int userMenu = helper::GetMenuChoice("Menu Option: ", 1, 3);
 
 		//menu loop
 		switch (userMenu)
 		{
-		case 1://select hero
-			system("cls");//clears the screen 
-			data.userHero = Characters::SelectHeroes(data.heroes);
-			system("cls");//clears the screen 
-			std::cout << "\n\nHero selected: [ " << data.userHero.GetCharacterName() << " ]\n";
-			data.PrintPicture(data.userHero.GetPicture());
-			std::cout << "\n";
-			helper::GetEnter();//press enter to continue
-			break;
-		case 2://select villian
-			system("cls");//clears the screen 
-			data.userVillian = Characters::SelectVillians(data.villians);
-			system("cls");//clears the screen 
-			std::cout << "\n\nVillain selected: [ " << data.userVillian.GetCharacterName() << " ]\n";
-			data.PrintPicture(data.userVillian.GetPicture());
-			std::cout << "\n";
-			helper::GetEnter();//press enter to continue
-			break;
-		case 3://select weapon
-			system("cls");//clears the screen 
-			data.userWeapon = Weapons::SelectWeapon(data.weapons);
-			system("cls");//clears the screen 
-			std::cout << "\n\nWeapon selected: [ " << data.userWeapon.GetWeaponName() << " ]";
-			helper::GetEnter();//press enter to continue
-			break;
-		case 4://select armor
-			system("cls");//clears the screen 
-			data.userArmour = Armour::SelectArmour(data.armours);
-			system("cls");//clears the screen 
-			std::cout << "\n\nArmor selected: [ " << data.userArmour.GetArmourName() << " ]";
-			helper::GetEnter();//press enter to continue
-			break;
-		case 5://fight
-			system("cls");//clears the screen 
+		case 1://user selections
+			MenuSelectHero(data);
+			MenuRandomVillain(data);
+			MenuSelectWeapon(data);
+			MenuSelectArmor(data);
 			Fight(data);
 			system("cls");//clears the screen 
 			check = PlayAgain();
 			break;
-		case 6://exit
+		case 2://randomize everything
+			MenuRandomHero(data);
+			MenuRandomVillain(data);
+			MenuRandomWeapon(data);
+			MenuRandomArmor(data);
+			Fight(data);
+			system("cls");//clears the screen 
+			check = PlayAgain();
+			break;
+		case 3://exit
 			check = false;
 			break;
 		default:

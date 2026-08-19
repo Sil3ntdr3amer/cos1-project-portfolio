@@ -26,7 +26,8 @@ public:
 
 	//Select armour method
 	static Armour SelectArmour(const std::vector<Armour>& armours);
-
+	//random armour
+	static Armour RandomArmor(const std::vector<Armour>& armors);
 
 private:
 	std::string armourName;

@@ -31,7 +31,7 @@ Started off by creating my weapons and armor. I ended up changing the location o
 
 ### Week 3
 
-Stay tuned, this stand up is coming soon...
+ I worked on making the user have to select a hero, weapon, and armor. the villain is randomly selected. I also added a random fight feature which will randomize everything for you. I changed some of the armor and weapons so they did more or less damage and gave more or less health. I also cleaned up some code so that they were in methods instead of scattered around in other methods. I added the randomize feature which will randomly select a hero, villain, weapon, and armor. I cleaned up a lot of the UI so it was more readable. I found that the game wasn't very fun because you could spam attack and always win. So i made the villains more difficult, but still beatable. The main feedback I received was adding a random feature to the game. So I made the villain always be randomized and I made a Random fight feature which will randomize everything. My primary goal is to add a random event feature which will randomly add or subtract health and damage to either the hero or villain.
 
 ### Week 4
 
