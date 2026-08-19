@@ -110,8 +110,9 @@ void Fight(GameCharacters& data)
 	bool check = true;
 
 	system("cls");//clears the screen
-	FightMenu(data);
 	player = Calculate(data);
+	FightMenu(player);
+	
 	int villainDefense = helper::RandomNumberGenerator(0, 10);
 
 	do

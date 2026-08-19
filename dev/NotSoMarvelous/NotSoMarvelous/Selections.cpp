@@ -21,7 +21,7 @@ void MenuSelectVillain(GameCharacters& data)
 	system("cls");//clears the screen 
 	data.userVillian = Characters::SelectVillians(data.villians);
 	system("cls");//clears the screen 
-	std::cout << "\n\nVillain selected: [ " << data.userVillian.GetCharacterName() << " ]\n";
+	std::cout << "\n\nVillain approaching: [ " << data.userVillian.GetCharacterName() << " ]\n";
 	data.PrintPicture(data.userVillian.GetPicture());
 	std::cout << "\n";
 	helper::GetEnter();//press enter to continue

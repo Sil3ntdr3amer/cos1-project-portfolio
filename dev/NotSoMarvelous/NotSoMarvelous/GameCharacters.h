@@ -4,7 +4,7 @@
 #include "Weapons.h"
 #include "Armour.h"
 #include <vector>
-
+#include <string>
 
 
 struct GameCharacters
@@ -281,5 +281,12 @@ struct GameCharacters
 			}
 			std::cout << "\n";
 		}
+	}
+
+	//method to show all stats
+	void ShowStats(const GameCharacters& data)
+	{
+		std::cout << "\n\t[ " << data.userHero.GetCharacterName() << ": " << data.userHero.GetHealth() << " HP, " << data.userHero.GetAttack() << " Damage ]\t\t";
+		std::cout << "[ " << data.userVillian.GetCharacterName() << ": " << data.userVillian.GetHealth() << " HP, " << data.userVillian.GetAttack() << " Damage ]\n\n";
 	}
 };
