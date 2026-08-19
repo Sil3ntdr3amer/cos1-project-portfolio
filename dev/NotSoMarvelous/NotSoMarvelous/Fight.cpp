@@ -52,8 +52,8 @@ GameCharacters Calculate(GameCharacters data)
 	data.userHero.attack += data.userWeapon.GetAddAttack();//adds damage from weapon
 	data.userHero.attack -= data.userArmour.GetMinusDamage();//subtract damage from armor
 
-	data.userVillian.health -= helper::RandomNumberGenerator(0, 5);//subtract health from weapon
-	data.userVillian.attack += helper::RandomNumberGenerator(0, 5);//adds damage from weapon
+	data.userVillian.health -= helper::RandomNumberGenerator(0, 10);//subtract health from weapon
+	data.userVillian.attack += helper::RandomNumberGenerator(5, 15);//adds damage from weapon
 	data.userVillian.attack -= helper::RandomNumberGenerator(0, 5);//subtract damage from armor
 
 	return data;
@@ -113,7 +113,7 @@ void Fight(GameCharacters& data)
 	player = Calculate(data);
 	FightMenu(player);
 	
-	int villainDefense = helper::RandomNumberGenerator(0, 10);
+	int villainDefense = helper::RandomNumberGenerator(10, 20);
 
 	do
 	{
@@ -122,7 +122,7 @@ void Fight(GameCharacters& data)
 		std::cout << "\n\n\t\t  [ " << data.userHero.GetCharacterName() << " ]\t\t\t\t\t\t" << "  [ " << data.userVillian.GetCharacterName() << " ]\n\n";
 		data.PrintFightPicture(data.userHero.GetPicture(), data.userVillian.GetPicture());
 		std::cout << "\n\n";
-
+		data.ShowStats(player);
 		std::cout << "++++++++++++++\n";
 		std::cout << "  1. Attack   \n";
 		std::cout << "  2. Defend   \n";

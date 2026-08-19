@@ -15,7 +15,7 @@ Weapons Weapons::SelectWeapon(const std::vector<Weapons>& weapons)
 		std::cout << "| " << "[" << (i + 1) << "] " << weapons[i].GetWeaponName() << ": -" << weapons[i].GetMinusHealth() << " HP, +" << weapons[i].GetAddAttack() << " Damage\n";
 	}
 	std::cout << "+------------------------------------------------+\n";
-	unsigned int usersWeapon = helper::GetMenuChoice("Which weapon would you like to use? ", 1, 5);
+	unsigned int usersWeapon = helper::GetMenuChoice("Which weapon would you like to use? ", 1, 6);
 	Weapons selectedWeapon = weapons[usersWeapon - 1];
 	return selectedWeapon;
 }

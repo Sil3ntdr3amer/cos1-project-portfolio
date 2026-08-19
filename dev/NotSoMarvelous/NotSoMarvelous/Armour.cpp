@@ -14,7 +14,7 @@ Armour Armour::SelectArmour(const std::vector<Armour>& armours)
 		std::cout << "| " << "[" << (i + 1) << "] " << armours[i].GetArmourName() << ": -" << armours[i].GetMinusDamage() << " Damage, +" << armours[i].GetDefense() << " Defense\n";
 	}
 	std::cout << "+------------------------------------------------+\n";
-	unsigned int usersArmour = helper::GetMenuChoice("Which armor would you like to use? ", 1, 5);
+	unsigned int usersArmour = helper::GetMenuChoice("Which armor would you like to use? ", 1, 4);
 	Armour selectedArmour = armours[usersArmour - 1];
 	return selectedArmour;
 }
