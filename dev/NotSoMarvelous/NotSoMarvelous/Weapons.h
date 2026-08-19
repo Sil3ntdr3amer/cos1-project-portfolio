@@ -26,6 +26,8 @@ public:
 
 	//Select weapons method
 	static Weapons SelectWeapon(const std::vector<Weapons>& weapons);
+	//Random weapon
+	static Weapons RandomWeapon(const std::vector<Weapons>& weapons);
 
 
 private:

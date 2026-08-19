@@ -19,3 +19,11 @@ Weapons Weapons::SelectWeapon(const std::vector<Weapons>& weapons)
 	Weapons selectedWeapon = weapons[usersWeapon - 1];
 	return selectedWeapon;
 }
+
+//selects a random weapon
+Weapons Weapons::RandomWeapon(const std::vector<Weapons>& weapons)
+{
+	unsigned int usersWeapon = helper::RandomNumberGenerator(1, 6);
+	Weapons selectedWeapon = weapons[usersWeapon - 1];
+	return selectedWeapon;
+}

@@ -18,3 +18,11 @@ Armour Armour::SelectArmour(const std::vector<Armour>& armours)
 	Armour selectedArmour = armours[usersArmour - 1];
 	return selectedArmour;
 }
+
+//selects a random armor
+Armour Armour::RandomArmor(const std::vector<Armour>& armors)
+{
+	unsigned int usersArmor = helper::RandomNumberGenerator(1, 4);
+	Armour selectedArmor = armors[usersArmor - 1];
+	return selectedArmor;
+}

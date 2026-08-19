@@ -36,7 +36,7 @@ int main()
 		{
 		case 1://user selections
 			MenuSelectHero(data);
-			MenuSelectVillain(data);
+			MenuRandomVillain(data);
 			MenuSelectWeapon(data);
 			MenuSelectArmor(data);
 			Fight(data);
@@ -44,6 +44,10 @@ int main()
 			check = PlayAgain();
 			break;
 		case 2://randomize everything
+			MenuRandomHero(data);
+			MenuRandomVillain(data);
+			MenuRandomWeapon(data);
+			MenuRandomArmor(data);
 			Fight(data);
 			system("cls");//clears the screen 
 			check = PlayAgain();

@@ -21,12 +21,20 @@ Characters Characters::SelectHeroes(const std::vector<Characters>& heroes)
 	return selectedHero;
 }
 
-//Shows the user all of the Villians and has them select one
-Characters Characters::SelectVillians(const std::vector<Characters>& villians)
+//selects a random villain
+Characters Characters::RandomVillian(const std::vector<Characters>& villians)
 {
 	unsigned int usersVillian = helper::RandomNumberGenerator(1, 5);
 	Characters selectedVillian = villians[usersVillian - 1];
 	return selectedVillian;
+}
+
+//selects a random hero
+Characters Characters::RandomHero(const std::vector<Characters>& heroes)
+{
+	unsigned int usersHero = helper::RandomNumberGenerator(1, 5);
+	Characters selectedHero = heroes[usersHero - 1];
+	return selectedHero;
 }
 
 
