@@ -14,12 +14,9 @@ void Menu()
 	std::cout << "\n+============================================+\n";
 	std::cout << "| Welcome to Not So MARVELous Fighting Arena |\n";
 	std::cout << "+============================================+\n\n";
-	std::cout << "  1. Select Hero\n";
-	std::cout << "  2. Select Villian\n";
-	std::cout << "  3. Select Weapon\n";
-	std::cout << "  4. Select Armor\n";
-	std::cout << "  5. Fight\n";
-	std::cout << "  6. Exit\n\n";
+	std::cout << "  1. FIGHT\n";
+	std::cout << "  2. RANDOM FIGHT\n";
+	std::cout << "  3. Exit\n\n";
 }
 
 //This will be the menu for the fight scene
