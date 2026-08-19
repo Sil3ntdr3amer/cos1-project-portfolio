@@ -251,7 +251,9 @@ struct GameCharacters
 	//method to print out the picture of both selected characters
 	void PrintFightPicture(const std::vector<std::string>& heroPic, const std::vector<std::string>& villainPic) const
 	{
-		int sizeTracker = 0;
+		constexpr size_t kPicWidth = 35; // every picture array is 35 columns wide
+
+		size_t sizeTracker = 0;
 		if (heroPic.size() > villainPic.size())
 		{
 			sizeTracker = heroPic.size();
@@ -270,12 +272,7 @@ struct GameCharacters
 			{
 				if (i >= heroPic.size())
 				{
-					std::cout << "\t";
-					size_t size = heroPic[1].size() / 3;
-					for (size_t j = 0; j < size; ++j)
-					{
-						std::cout << " ";
-					}
+					std::cout << "\t" << std::string(kPicWidth, ' ');
 				}
 				std::cout << "\t\t\t" << villainPic[i];
 			}
