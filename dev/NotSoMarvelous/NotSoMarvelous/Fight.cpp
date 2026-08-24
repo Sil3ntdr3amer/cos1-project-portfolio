@@ -52,9 +52,9 @@ GameCharacters Calculate(GameCharacters data)
 	data.userHero.attack += data.userWeapon.GetAddAttack();//adds damage from weapon
 	data.userHero.attack -= data.userArmour.GetMinusDamage();//subtract damage from armor
 
-	data.userVillian.health -= helper::RandomNumberGenerator(0, 10);//subtract health from weapon
-	data.userVillian.attack += helper::RandomNumberGenerator(5, 15);//adds damage from weapon
-	data.userVillian.attack -= helper::RandomNumberGenerator(0, 5);//subtract damage from armor
+	data.userVillian.health -= helper::RandomNumberGenerator(5, 10);//subtract health from weapon
+	data.userVillian.attack += helper::RandomNumberGenerator(0, 15);//adds damage from weapon
+	data.userVillian.attack -= helper::RandomNumberGenerator(0, 8);//subtract damage from armor
 
 	return data;
 }
@@ -67,16 +67,19 @@ bool Winner(GameCharacters& player)
 
 	if (villainDown && heroDown)
 	{
+		system("cls");//clears the screen
 		std::cout << "\n\nIt's a draw! Both fighters have fallen!\n";
 		return false;
 	}
 	if (villainDown)
 	{
+		system("cls");//clears the screen
 		std::cout << "\n\nWinner is " << player.userHero.GetCharacterName() << "\n";
 		return false;
 	}
 	if (heroDown)
 	{
+		system("cls");//clears the screen
 		std::cout << "\n\nWinner is " << player.userVillian.GetCharacterName() << "\n";
 		return false;
 	}
