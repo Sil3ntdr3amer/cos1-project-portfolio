@@ -205,32 +205,32 @@ struct GameCharacters
 };
 
 	//create all the heroes and villians
-	Characters spiderman{ "Spiderman", spidermanPic, 100, 10 }; // spiderman / hp: 100 / att : 10
-	Characters wolverine{ "Wolverine", wolverinePic, 94, 13 }; // wolverine / hp : 94 / att : 13
-	Characters hulk{ "Hulk", hulkPic, 90, 15 }; // hulk / hp : 90 / att : 15
-	Characters captainAmerica{ "Captain America", captainAmericaPic, 96, 12 }; // captain america / hp : 96 / att : 12
-	Characters hawkeye{ "Hawkeye", hawkeyePic, 98, 11 }; // hawkeye / hp : 98 / att : 11
-	Characters loki{ "Loki", lokiPic, 100, 10 }; // loki / hp : 100 / att : 10
-	Characters venom{ "Venom", venomPic, 94, 13 }; // venom / hp : 94 / att : 13
-	Characters drDoom{ "Dr. Doom", drDoomPic, 90, 15 }; // dr. doom / hp : 90 / att : 15
-	Characters magneto{ "Magneto", magnetoPic, 96, 12 }; // magneto / hp : 96 / att : 12
-	Characters greenGoblin{ "Green Goblin", greenGoblinPic, 98, 11 }; // green goblin / hp : 98 / att : 11
+	Characters spiderman{ "\033[44;31mSpiderman\033[0m", spidermanPic, 100, 10 }; // Red text on Blue background
+	Characters wolverine{ "\033[46;33mWolverine\033[0m", wolverinePic, 94, 13 }; // Yellow text on Cyan background
+	Characters hulk{ "\033[45;32mHulk\033[0m", hulkPic, 90, 15 }; // Green text on Purple background
+	Characters captainAmerica{ "\033[41;34mCaptain America\033[0m", captainAmericaPic, 96, 12 }; // Blue text on Red background
+	Characters hawkeye{ "\033[43;35mHawkeye\033[0m", hawkeyePic, 98, 11 }; // Purple text on Yellow background
+	Characters loki{ "\033[42;33mLoki\033[0m", lokiPic, 100, 10 }; // Yellow text on Green background
+	Characters venom{ "\033[41;97mVenom\033[0m", venomPic, 94, 13 }; // White text on Red background (Symbiote style)
+	Characters drDoom{ "\033[42;37mDr. Doom\033[0m", drDoomPic, 90, 15 }; // Light Gray text on Green background
+	Characters magneto{ "\033[41;35mMagneto\033[0m", magnetoPic, 96, 12 }; // Purple text on Red background
+	Characters greenGoblin{ "\033[45;36mGreen Goblin\033[0m", greenGoblinPic, 98, 11 }; // Cyan/Teal text on Purple background
 	std::vector<Characters> heroes = { spiderman, wolverine, hulk, captainAmerica, hawkeye };
 	std::vector<Characters> villians = { loki, venom, drDoom, magneto, greenGoblin };
 
 	//created all of my weapons
-	Weapons hammer{ "Hammer", 10, 10 };// add 10 damage / -10 hp
-	Weapons sword{ "Sword", 4, 4 };// add 4 damage / -4 hp
-	Weapons magic{ "Magic", 7, 7 };// add 7 damage / -7 hp
-	Weapons staff{ "Staff", 3, 3 };// add 3 damage / -3 hp
-	Weapons gun{ "Gun", 5, 5 };// add 5 damage / -5 hp
+	Weapons hammer{ "\033[33mHammer\033[0m", 10, 10 }; // Yellow (Gold/Lightning)
+	Weapons sword{ "\033[36mSword\033[0m", 4, 4 };   // Cyan (Steel/Blade)
+	Weapons magic{ "\033[35mMagic\033[0m", 7, 7 };   // Purple (Mystic/Arcane)
+	Weapons staff{ "\033[32mStaff\033[0m", 3, 3 };   // Green (Wood/Nature)
+	Weapons gun{ "\033[31mGun\033[0m", 5, 5 };       // Red (Firepower)
 	Weapons noWeapon{ "No Weapon", 0, 0 };
 	std::vector<Weapons> weapons = { hammer, sword, magic, staff, gun, noWeapon };
 
 	//created all of my armours
-	Armour greyShield{ "Grey Shield", 1, 6 }; // minus 1 damage / add 6 defense
-	Armour blueShield{ "Blue Shield", 3, 8 }; // minus 3 damage / add 8 defense
-	Armour purpleShield{ "Purple Shield", 5, 10 }; // minus 5 damage / add 10 defense
+	Armour greyShield{ "\033[90mGrey Shield\033[0m", 1, 6 };   // Light Gray / Bright Black
+	Armour blueShield{ "\033[34mBlue Shield\033[0m", 3, 8 };   // Blue
+	Armour purpleShield{ "\033[35mPurple Shield\033[0m", 5, 10 }; // Purple / Magenta
 	Armour noShield{ "No Shield", 0, 0 };
 	std::vector<Armour> armours = { greyShield, blueShield, purpleShield, noShield };
 

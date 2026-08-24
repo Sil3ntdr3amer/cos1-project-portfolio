@@ -49,6 +49,8 @@ void FightMenu(GameCharacters& data)
 	   |                                                                     |
 	   +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 )ART";
+	helper::GetEnter();
+	system("cls");//clears the screen 
 	//print to the screen the characters
 	std::cout << "\n\n\t\t  [ " << data.userHero.GetCharacterName() << " ]\t\t\t\t\t\t" << "  [ " << data.userVillian.GetCharacterName() << " ]\n\n";
 	data.PrintFightPicture(data.userHero.GetPicture(), data.userVillian.GetPicture());
