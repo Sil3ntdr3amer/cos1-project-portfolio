@@ -1,0 +1,5 @@
+- this past week i did a lot of user validation, testing, and added some colors.
+- I mainly polished how everything looks. I made the title bigger and added color to it.
+- the main obstacle I faced was trying to get the ascii art to change color. I found out that I can use something like this )ART" << "\033[31m" << R"ART( to add and end color.
+- The most valuable thing I learned was how to organize your code and plan appropriately to get the best results.
+- I would definitely add animations. so I would have the characters move as the fight progresses.
